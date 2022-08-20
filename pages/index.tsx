@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import Image from "../components/Image";
-
+import chessImage from "../public/images/image.jpeg";
 const Home: NextPage = () => {
   return (
     <div>
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           <a href="https://nextjs.org/docs">
             <Image
               className={styles.img}
-              src="/images/image.jpeg"
+              src={chessImage}
               alt="chess images"
               width="400px"
               height="400px"
