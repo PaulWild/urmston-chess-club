@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
+import Image from "../components/Image";
 
 const Home: NextPage = () => {
   return (
@@ -14,13 +15,13 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs">
-            <img
+            <Image
               className={styles.img}
               src="/images/image.jpeg"
               alt="chess images"
               width="400px"
               height="400px"
-            ></img>
+            />
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>

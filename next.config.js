@@ -6,6 +6,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   assetPrefix: `${basePath}/`,
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
 };
 
 module.exports = nextConfig;
