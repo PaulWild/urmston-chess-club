@@ -15,7 +15,11 @@ const Header = () => {
             </>
           </Link>
         </div>
-        <button className={styles.hamburger} onClick={toggleExpanded}>
+        <button
+          title="navigation bar control"
+          className={styles.hamburger}
+          onClick={toggleExpanded}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"

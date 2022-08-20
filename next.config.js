@@ -10,10 +10,6 @@ const nextConfig = {
   images: {
     loader: "custom",
   },
-  i18n: {
-    locales: ["en-GB"],
-    defaultLocale: "en-GB",
-  },
 };
 
 module.exports = nextConfig;
