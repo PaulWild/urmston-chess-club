@@ -10,6 +10,11 @@ const nextConfig = {
   images: {
     loader: "custom",
   },
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
 };
 
 module.exports = nextConfig;
