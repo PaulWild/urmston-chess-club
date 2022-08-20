@@ -6,10 +6,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   assetPrefix: `${basePath}/`,
-  experimental: {
-    images: {
-      unoptimized: true,
-    },
+  basePath: `${basePath}`,
+  images: {
+    loader: "custom",
   },
 };
 
