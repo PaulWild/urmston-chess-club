@@ -14,9 +14,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className={styles.hero}>
+      <Image className={styles.img} src={chessImage} alt="chess images" />
+
+      <Container>
         <div className={styles.content}>
-          <h1>Chess Club in the heart of the Trafford area of Manchester</h1>
+          <h1>Welcome to Urmston chess club</h1>
           <p>All welcome to come along on Monday night</p>
           <p>
             In mauris lacus, luctus at erat vitae, pretium euismod ante. Integer
@@ -24,10 +26,7 @@ const Home: NextPage = () => {
             cursus, quis ullamcorper quam aliquam.
           </p>
         </div>
-        <div className={styles.image}>
-          <Image className={styles.img} src={chessImage} alt="chess images" />
-        </div>
-      </section>
+      </Container>
 
       <div>
         <Container>
