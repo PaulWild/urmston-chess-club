@@ -1,12 +1,12 @@
-const basePath =
-  process.env.NODE_ENV === "production" ? "/urmston-chess-club" : "";
+const slug = "urmston-chess-club";
+const path = process.env.NODE_ENV === "production" ? `/${slug}` : "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  assetPrefix: `${basePath}/`,
-  basePath: `${basePath}`,
+  assetPrefix: path,
+  basePath: path,
   images: {
     loader: "custom",
   },
