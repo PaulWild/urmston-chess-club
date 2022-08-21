@@ -9,27 +9,38 @@
   overflow: hidden;
 
   .container {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
     margin: 0 auto;
     max-width: 1366px;
-  }
+    justify-content: space-between;
 
-  .findus {
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      margin: 0;
+    .copyright {
+      font-size: small;
     }
 
-    li {
-      display: flex;
-      margin: 20px 10px 20px 0;
+    .findus {
+      float: right;
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+      }
 
-      align-items: center;
-      //width: 70px;
-      max-width: 100px;
-      max-height: 50px;
+      li {
+        display: flex;
+        margin: 20px 10px 20px 0;
+
+        align-items: center;
+        //width: 70px;
+        max-width: 100px;
+        max-height: 50px;
+        min-width: 30px;
+        min-width: 30px;
+      }
     }
   }
 }

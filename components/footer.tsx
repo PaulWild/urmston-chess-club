@@ -8,6 +8,9 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
+        <div className={styles.copyright}>
+          <p>© urmston chess club 2022</p>
+        </div>
         <div className={styles.findus}>
           <ul>
             <li>
