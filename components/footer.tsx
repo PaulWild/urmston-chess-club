@@ -1,7 +1,6 @@
 import Facebook from "../public/images/facebook.png";
 import Chess from "../public/images/chess_com.png";
 import Lichess from "../public/images/lichess.png";
-import { Container } from "./container";
 import styles from "./footer.module.scss";
 import Image from "./Image";
 
@@ -12,19 +11,25 @@ const Footer = () => {
         <div className={styles.findus}>
           <ul>
             <li>
-              <Image src={Facebook} alt="Find us on facebook" />
+              <a href="https://www.facebook.com/UrmstonChess">
+                <Image src={Facebook} alt="Find us on facebook" />
+              </a>
             </li>
             <li>
-              <Image
-                src={Lichess}
-                alt="Find us on Lichess"
-                className={styles.lichess}
-                width="30px"
-                height="30px"
-              />
+              <a href="https://lichess.org/team/urmston-chess-club">
+                <Image
+                  src={Lichess}
+                  alt="Find us on Lichess"
+                  className={styles.lichess}
+                  width="30px"
+                  height="30px"
+                />
+              </a>
             </li>
             <li>
-              <Image src={Chess} alt="Find us on chess.com" />
+              <a href="https://www.chess.com/club/urmston-chess-club">
+                <Image src={Chess} alt="Find us on chess.com" />
+              </a>
             </li>
           </ul>
         </div>
