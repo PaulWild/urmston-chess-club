@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  .content {
+    flex-basis: 50%;
+  }
+
+  .image {
+    flex-basis: 50%;
+  }
+}
+
+.banner {
+  max-height: 350px;
+  overflow: hidden;
+}

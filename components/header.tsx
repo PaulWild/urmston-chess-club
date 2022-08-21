@@ -2,20 +2,17 @@ import styles from "./header.module.scss";
 import Link from "next/link";
 import useToggle from "../hooks/useToggle";
 import Horsey from "./horsey";
-
 const Header = () => {
   const [isExpanded, toggleExpanded] = useToggle(false);
 
   return (
     <div className={styles.header}>
       <nav className={styles.navigation}>
-        <div className={styles["brand-name"]}>
-          <Link href="/">
-            <>
-              <Horsey /> <div>Urmston Chess Club</div>
-            </>
-          </Link>
-        </div>
+        <Link href="/">
+          <div className={styles["brand-name"]}>
+            <Horsey /> <div>Urmston Chess Club</div>
+          </div>
+        </Link>
         <button
           title="navigation bar control"
           className={styles.hamburger}

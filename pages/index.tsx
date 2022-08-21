@@ -1,46 +1,46 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import styles from "../styles/Home.module.scss";
-import Image from "../components/Image";
+import Banner from "../components/banner";
 import chessImage from "../public/images/image2.jpg";
 import { Container } from "../components/container";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>Urmston Chess Club</title>
-        <meta name="description" content="Umrston chess club" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Image className={styles.img} src={chessImage} alt="chess images" />
-
+      <Banner imgPath={chessImage} />
       <Container>
         <div className={styles.content}>
           <h1>Welcome to Urmston chess club</h1>
-          <p>All welcome to come along on Monday night</p>
           <p>
-            In mauris lacus, luctus at erat vitae, pretium euismod ante. Integer
-            feugiat ullamcorper posuere. Praesent accumsan ipsum et dolor
-            cursus, quis ullamcorper quam aliquam.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            blandit maximus nisi et venenatis. Duis tincidunt mauris in diam
+            fringilla, et sagittis massa cursus. Maecenas odio elit, posuere non
+            venenatis eget, pellentesque eu est. Morbi gravida tellus quis dolor
+            efficitur ultricies. Donec feugiat quam non est feugiat, at tempus
+            nibh condimentum. Aenean posuere auctor laoreet. Nunc felis felis,
+            aliquet ac dapibus at, sodales ut lorem. Vestibulum vestibulum
+            posuere nulla, sed facilisis metus accumsan a. Sed et orci mollis
+            velit ultrices gravida et at ligula. Vivamus dictum neque at libero
+            pretium, sed egestas velit sagittis. Sed quis eros eget lacus
+            scelerisque sollicitudin laoreet semper leo. In facilisis nunc
+            libero, eu pellentesque mauris molestie a. Aenean interdum sem vitae
+            felis auctor fringilla malesuada id ex.
+          </p>
+          <h2>Lorem Ipsum</h2>
+          <p>
+            Vestibulum lacinia turpis quis neque vehicula, porttitor faucibus
+            arcu sollicitudin. Nullam suscipit mattis dui nec posuere. Mauris id
+            tristique lorem. Aliquam non ipsum nibh. Nunc id viverra enim. Etiam
+            luctus magna vel enim dapibus venenatis ac at lorem. Sed at varius
+            mauris, et tempor orci. Curabitur sed nisi finibus, lacinia ipsum
+            varius, pharetra nibh. Donec sed justo nisl. Aenean porttitor vel
+            massa non ultrices. Proin non rhoncus sem, vitae vehicula sapien.
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per inceptos himenaeos. In hac habitasse platea dictumst. Etiam
+            facilisis suscipit est, sed iaculis lacus.
           </p>
         </div>
       </Container>
-
-      <div>
-        <Container>
-          <section>
-            <h2>Lorem Ipsum</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              condimentum urna ac rhoncus commodo. Maecenas interdum gravida
-              tortor, at tempor odio rutrum quis.
-            </p>
-          </section>
-        </Container>
-      </div>
-
       {/* <main className={styles.main}>
         <div className={styles.grid}>
           <Image className={styles.img} src={chessImage} alt="chess images" />
