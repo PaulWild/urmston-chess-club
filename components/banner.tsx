@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import styles from "./Banner.module.scss";
+import styles from "./banner.module.scss";
 
 type Props = {
   imgPath: StaticImageData;
