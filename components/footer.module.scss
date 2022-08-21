@@ -1,0 +1,35 @@
+.footer {
+  background-color: white;
+  border-top: 5px;
+  border-color: black;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+
+  .container {
+    margin: 0 auto;
+    max-width: 1366px;
+  }
+
+  .findus {
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0;
+    }
+
+    li {
+      display: flex;
+      margin: 20px 10px 20px 0;
+
+      align-items: center;
+      //width: 70px;
+      max-width: 100px;
+      max-height: 50px;
+    }
+  }
+}

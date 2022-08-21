@@ -2,6 +2,7 @@ import styles from "./header.module.scss";
 import Link from "next/link";
 import useToggle from "../hooks/useToggle";
 import Horsey from "./horsey";
+
 const Header = () => {
   const [isExpanded, toggleExpanded] = useToggle(false);
 
