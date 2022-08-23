@@ -3,6 +3,8 @@ name: GitHub Pages deploy
 on:
   push:
     branches: [main]
+  repository_dispatch:
+    types: [publish-event]
 
 jobs:
   build:
