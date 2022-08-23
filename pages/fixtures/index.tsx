@@ -29,7 +29,6 @@ export const getStaticProps = async (): Promise<{ props: Props }> => {
 };
 
 const Fixtures = ({ fixtures }: Props) => {
-  console.log(fixtures);
   return (
     <Container>
       {fixtures.map((fixture) => (
