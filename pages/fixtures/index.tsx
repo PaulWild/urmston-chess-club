@@ -1,4 +1,5 @@
 import { createClient } from "contentful";
+import { Container } from "../../components/container";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID ?? "",
@@ -30,13 +31,17 @@ export const getStaticProps = async (): Promise<{ props: Props }> => {
 const Fixtures = ({ fixtures }: Props) => {
   console.log(fixtures);
   return (
-    <>
+    <Container>
       {fixtures.map((fixture) => (
         <div key={fixture.date}>
-          {`${fixture.home} - ${fixture.away} @ ${fixture.location} ${fixture.date}`}
+          {`${fixture.home} - ${fixture.away} @ ${fixture.location} ${new Date(
+            fixture.date
+          ).toLocaleDateString()} ${new Date(
+            fixture.date
+          ).toLocaleTimeString()}`}
         </div>
       ))}
-    </>
+    </Container>
   );
 };
 
