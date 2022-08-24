@@ -1,12 +1,13 @@
 import { createClient } from "contentful";
 import { Container } from "../../components/container";
+import Fixture from "../../components/fixture";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID ?? "",
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
 });
 
-type Fixture = {
+export type Fixture = {
   home: string;
   away: string;
   date: string;
@@ -32,13 +33,7 @@ const Fixtures = ({ fixtures }: Props) => {
   return (
     <Container>
       {fixtures.map((fixture) => (
-        <div key={fixture.date}>
-          {`${fixture.home} - ${fixture.away} @ ${fixture.location} ${new Date(
-            fixture.date
-          ).toLocaleDateString()} ${new Date(
-            fixture.date
-          ).toLocaleTimeString()}`}
-        </div>
+        <Fixture key={fixture.date} fixture={fixture} />
       ))}
     </Container>
   );
