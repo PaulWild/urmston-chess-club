@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.scss";
 import Banner from "../components/banner";
 import chessImage from "../public/images/image2.jpg";
 import { Container } from "../components/container";
@@ -9,7 +8,7 @@ const Home: NextPage = () => {
     <div>
       <Banner imgPath={chessImage} />
       <Container>
-        <div className={styles.content}>
+        <main>
           <h1>Welcome to Urmston chess club</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
@@ -39,28 +38,8 @@ const Home: NextPage = () => {
             per inceptos himenaeos. In hac habitasse platea dictumst. Etiam
             facilisis suscipit est, sed iaculis lacus.
           </p>
-        </div>
+        </main>
       </Container>
-      {/* <main className={styles.main}>
-        <div className={styles.grid}>
-          <Image className={styles.img} src={chessImage} alt="chess images" />
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-        </div>
-      </main> */}
-
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <span className={styles.logo}></span>
-        </a>
-      </footer> */}
     </div>
   );
 };

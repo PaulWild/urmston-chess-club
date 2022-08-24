@@ -12,7 +12,7 @@ const Contact = () => {
           <div className={styles.content}>
             <h1>Contact Us</h1>
             <p>
-              Socail chess and home league games are played at Urmston Sports
+              Social chess and home league games are played at Urmston Sports
               Club on a monday evening.{" "}
             </p>
             <address>
