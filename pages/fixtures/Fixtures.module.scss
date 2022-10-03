@@ -1,0 +1,36 @@
+.league-table {
+  overflow-x: auto;
+  white-space: nowrap;
+
+  table {
+    border-collapse: collapse;
+  }
+
+  tr td:nth-child(4) {
+    text-align: center;
+  }
+
+  td,
+  th {
+    padding: 0 1rem;
+    border: 1px solid black;
+  }
+
+  .league-name {
+    td,
+    th,
+    tr {
+      border: none;
+      text-align: left;
+      padding: none;
+    }
+
+    svg {
+      vertical-align: text-top;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+}
