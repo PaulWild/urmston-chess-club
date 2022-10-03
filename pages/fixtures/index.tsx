@@ -3,6 +3,7 @@ import { Container } from "../../components/container";
 import Fixture from "../../components/fixture";
 import styles from "./Fixtures.module.scss";
 import { HiExternalLink } from "react-icons/hi";
+import Link from "next/link";
 
 export type Fixture = {
   sys: {
@@ -19,7 +20,7 @@ export type Fixture = {
   };
 };
 
-type LeagueGames = Record<string, Fixture[]>;
+export type LeagueGames = Record<string, Fixture[]>;
 
 type Props = {
   leagueGames: LeagueGames;
@@ -28,7 +29,7 @@ type Props = {
 export const getStaticProps = async (): Promise<{ props: Props }> => {
   const body = JSON.stringify({
     query: `query {
-  fixtureCollection (order: date_DESC){
+  fixtureCollection (order: date_ASC){
     items{ 
       sys {
         id
@@ -83,9 +84,13 @@ const Fixtures = ({ leagueGames }: Props) => {
               <thead key={leagueName}>
                 <tr className={styles["league-name"]}>
                   <th colSpan={5}>
-                    <h2>
-                      <span>{leagueName}</span> <HiExternalLink />
-                    </h2>
+                    <Link href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}>
+                      <a>
+                        <h2>
+                          <span>{leagueName}</span> <HiExternalLink />
+                        </h2>
+                      </a>
+                    </Link>
                   </th>
                 </tr>
                 <tr>
@@ -106,7 +111,7 @@ const Fixtures = ({ leagueGames }: Props) => {
                       {fixture.awayGame ? "Urmston" : fixture.opponent} v{" "}
                       {fixture.awayGame ? fixture.opponent : "Urmston"}
                     </td>
-                    <td>{fixture.location}</td>
+                    <td>{fixture.location ?? <i>unknown</i>}</td>
                     <td>{`${fixture.homeScore ?? ""} - ${
                       fixture.awayScore ?? ""
                     }`}</td>
