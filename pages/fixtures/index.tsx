@@ -108,16 +108,13 @@ const Fixtures = ({ leagueGames }: Props) => {
                       {new Date(fixture.date).toISOString().substring(0, 10)}
                     </td>
                     <td>
-                      {fixture.awayGame ? "Urmston" : fixture.opponent} v{" "}
-                      {fixture.awayGame ? fixture.opponent : "Urmston"}
+                      {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
+                      {fixture.awayGame ? "Urmston" : fixture.opponent}
                     </td>
-                    <td>{fixture.location ?? <i>unknown</i>}</td>
+                    <td>{fixture.location ?? <i>???</i>}</td>
                     <td>{`${fixture.homeScore ?? ""} - ${
                       fixture.awayScore ?? ""
                     }`}</td>
-                    <td>
-                      <HiExternalLink />
-                    </td>
                   </tr>
                 </tbody>
               ))}

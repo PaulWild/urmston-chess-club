@@ -1,15 +1,15 @@
 import React from "react";
-import { Container } from "../../components/container";
+import { Container } from "../../../components/container";
 import { GetStaticPaths, GetStaticProps } from "next";
-import type { Fixture as FixtureType, LeagueGames } from ".";
-import Fixture from "../../components/fixture";
+import type { Fixture as FixtureType } from "../.";
+import Fixture from "../../../components/fixture";
 
 export type League = {
   name: string;
 };
 
 type Params = {
-  id: string;
+  leagueId: string;
 };
 
 type Props = {
@@ -43,7 +43,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const paths = items
     .map((x) => x.name.replaceAll(" ", "_"))
     .flatMap((x) => {
-      return { params: { id: x } };
+      return { params: { leagueId: x } };
     });
 
   return {

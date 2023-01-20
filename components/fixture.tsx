@@ -17,7 +17,7 @@ const Fixture = ({ fixture }: Props) => {
         <dt>Away</dt>
         <dd>{fixture.awayGame ? "Urmston" : fixture.opponent}</dd>
         <dt>Location</dt>
-        <dd>{fixture.location}</dd>
+        <dd>{fixture.location ?? "-"} </dd>
         <dt>Date</dt>
         <dd>
           {theDate.toISOString().substring(0, 10)}{" "}
