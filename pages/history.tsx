@@ -86,7 +86,7 @@ const History = () => {
       <p>
         Another group of Urmston players won “B” Division in 2012 – 2013 winning
         all their matches with 18 points from nine matches. The players were A.
-        Ashton, S. Jones, K. Smallbone, D. McCartney, P. Wheldon, R. Burgin, D.
+        Ashton, S. Jones, K. Smallbone, D. McCarthey, P. Wheldon, R. Burgin, D.
         Owen , C. Ashton, J. Hopkins, D. Horton, J. Pendlebury and this team was
         captained by John Reyes. This group of players may have won “A” Division
         this particular season but were relegated from “A” Division in 2011-
