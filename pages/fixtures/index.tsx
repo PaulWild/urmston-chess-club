@@ -102,34 +102,39 @@ const Fixtures = ({ leagueGames }: Props) => {
                   <th></th>
                 </tr>
               </thead>
-              {fixtures.map((fixture) => (
-                <tbody key={fixture.sys.id} className={styles["league-games"]}>
-                  <tr>
-                    <td>
-                      {new Date(fixture.date).toISOString().substring(0, 10)}
-                    </td>
-                    <td>
-                      {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
-                      {fixture.awayGame ? "Urmston" : fixture.opponent}
-                    </td>
-                    <td>{fixture.location ?? <i>???</i>}</td>
-                    <td>{`${fixture.homeScore ?? ""} - ${
-                      fixture.awayScore ?? ""
-                    }`}</td>
-                    <td>
-                      <Link
-                        href={`/fixtures/${leagueName.replaceAll(" ", "_")}/${
-                          fixture.sys.id
-                        }`}
-                      >
-                        <a>
-                          <HiExternalLink />
-                        </a>
-                      </Link>
-                    </td>
-                  </tr>
-                </tbody>
-              ))}
+              {fixtures
+                .sort((a, b) => a.date.localeCompare(b.date))
+                .map((fixture) => (
+                  <tbody
+                    key={fixture.sys.id}
+                    className={styles["league-games"]}
+                  >
+                    <tr>
+                      <td>
+                        {new Date(fixture.date).toISOString().substring(0, 10)}
+                      </td>
+                      <td>
+                        {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
+                        {fixture.awayGame ? "Urmston" : fixture.opponent}
+                      </td>
+                      <td>{fixture.location ?? <i>???</i>}</td>
+                      <td>{`${fixture.homeScore ?? ""} - ${
+                        fixture.awayScore ?? ""
+                      }`}</td>
+                      <td>
+                        <Link
+                          href={`/fixtures/${leagueName.replaceAll(" ", "_")}/${
+                            fixture.sys.id
+                          }`}
+                        >
+                          <a>
+                            <HiExternalLink />
+                          </a>
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
             </React.Fragment>
           ))}
         </table>
