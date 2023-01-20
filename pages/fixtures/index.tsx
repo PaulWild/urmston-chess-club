@@ -29,7 +29,7 @@ type Props = {
 export const getStaticProps = async (): Promise<{ props: Props }> => {
   const body = JSON.stringify({
     query: `query {
-  fixtureCollection (order: date_ASC){
+  fixtureCollection {
     items{ 
       sys {
         id
@@ -61,6 +61,7 @@ export const getStaticProps = async (): Promise<{ props: Props }> => {
   ).then((x) => x.json());
 
   const items: Fixture[] = res.data.fixtureCollection.items;
+  items.sort((a, b) => a.leaguecup.name.localeCompare(b.leaguecup.name));
 
   let leagueGames: LeagueGames = {};
   for (let fixture of items) {
@@ -115,6 +116,17 @@ const Fixtures = ({ leagueGames }: Props) => {
                     <td>{`${fixture.homeScore ?? ""} - ${
                       fixture.awayScore ?? ""
                     }`}</td>
+                    <td>
+                      <Link
+                        href={`/fixtures/${leagueName.replaceAll(" ", "_")}/${
+                          fixture.sys.id
+                        }`}
+                      >
+                        <a>
+                          <HiExternalLink />
+                        </a>
+                      </Link>
+                    </td>
                   </tr>
                 </tbody>
               ))}

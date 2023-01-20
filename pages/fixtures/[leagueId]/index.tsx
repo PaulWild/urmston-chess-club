@@ -53,7 +53,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = (context?.params?.id as string).replaceAll("_", " ");
+  const slug = (context?.params?.leagueId as string).replaceAll("_", " ");
 
   const body = JSON.stringify({
     query: `query {

@@ -3,7 +3,6 @@ import { Container } from "../../../../components/container";
 import { GetStaticPaths, GetStaticProps } from "next";
 import type { Fixture as FixtureType, LeagueGames } from "../../.";
 import Fixture from "../../../../components/fixture";
-import { symlinkSync } from "fs";
 
 export type Result = {
   sys: {
@@ -51,7 +50,8 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
     }
   ).then((x) => x.json());
 
-  const items: Result[] = res.data.leaguesCupsCollection.items;
+  const items: Result[] = res.data.fixtureCollection.items;
+
   const paths = items.map((x) => ({
     params: {
       leagueId: x.leaguecup.name.replaceAll(" ", "_"),
@@ -67,11 +67,11 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = (context?.params?.leagueId as string).replaceAll("_", " ");
-  const fixtureId = context?.params?.fixtureId
+  const fixtureId = context?.params?.fixtureId;
 
   const body = JSON.stringify({
     query: `query {
-        fixtureCollection (order: date_ASC, where: { leaguecup: { name: "${slug}"}}){
+        fixtureCollection (order: date_ASC, where: { leaguecup: { name: "${slug}"},  sys: {id: "${fixtureId}"}}){
           items{ 
             sys {
               id
