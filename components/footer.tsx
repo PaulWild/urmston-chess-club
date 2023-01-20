@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.copyright}>
-          <p>© urmston chess club 2022</p>
+          <p>© urmston chess club 2023</p>
         </div>
         <div className={styles.findus}>
           <ul>

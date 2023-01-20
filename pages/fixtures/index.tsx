@@ -117,7 +117,7 @@ const Fixtures = ({ leagueGames }: Props) => {
                         {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
                         {fixture.awayGame ? "Urmston" : fixture.opponent}
                       </td>
-                      <td>{fixture.location ?? <i>???</i>}</td>
+                      <td>{fixture.location ?? ""}</td>
                       <td>{`${fixture.homeScore ?? ""} - ${
                         fixture.awayScore ?? ""
                       }`}</td>

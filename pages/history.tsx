@@ -93,13 +93,9 @@ const History = () => {
         2012 season so had to play in “B” Division.
       </p>
       <p>
-        More recently after the move to Urmston Sports Club in 2021. Prominent
-        Urmston players are Jonathan Hill, Robert Furness, Mark Davis, Sam
-        Dehghan, David Bellis, Jordi Bitlloch, John Reyes and many others.
-      </p>
-      <p>
-        Urmston chess club are always looking for new chess players of all
-        strengths of play.
+        More recently after the move to Urmston Sports Club in 2021. Urmston
+        chess club are always looking for new chess players of all strengths of
+        play.
       </p>
     </Container>
   );
