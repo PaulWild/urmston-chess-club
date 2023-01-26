@@ -5,4 +5,5 @@ module.exports = {
   generateRobotsTxt: true,
   outDir: "out",
   changefreq: "monthly",
+  generateIndexSitemap: false,
 };
