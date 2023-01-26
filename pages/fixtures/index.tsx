@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "../../components/container";
-import Fixture from "../../components/fixture";
 import styles from "./Fixtures.module.scss";
 import { HiExternalLink } from "react-icons/hi";
 import Link from "next/link";
@@ -86,11 +85,9 @@ const Fixtures = ({ leagueGames }: Props) => {
                 <tr className={styles["league-name"]}>
                   <th colSpan={5}>
                     <Link href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}>
-                      <a>
-                        <h2>
-                          <span>{leagueName}</span> <HiExternalLink />
-                        </h2>
-                      </a>
+                      <h2>
+                        <span>{leagueName}</span> <HiExternalLink />
+                      </h2>
                     </Link>
                   </th>
                 </tr>
@@ -127,9 +124,7 @@ const Fixtures = ({ leagueGames }: Props) => {
                             fixture.sys.id
                           }`}
                         >
-                          <a>
-                            <HiExternalLink />
-                          </a>
+                          <HiExternalLink />
                         </Link>
                       </td>
                     </tr>

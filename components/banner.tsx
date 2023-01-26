@@ -5,6 +5,7 @@ type Props = {
   imgPath: StaticImageData;
   children?: React.ReactNode;
 };
+
 const Banner = ({ imgPath, children }: Props) => {
   return (
     <div

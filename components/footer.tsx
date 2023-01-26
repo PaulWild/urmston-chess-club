@@ -2,7 +2,7 @@ import Facebook from "../public/images/facebook.png";
 import Chess from "../public/images/chess_com.png";
 import Lichess from "../public/images/lichess.png";
 import styles from "./footer.module.scss";
-import Image from "./Image";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
           <ul>
             <li>
               <a href="https://www.facebook.com/UrmstonChess">
-                <Image src={Facebook} alt="Find us on facebook" />
+                <Image src={Facebook} alt="Find us on facebook" width={100} />
               </a>
             </li>
             <li>
@@ -24,14 +24,14 @@ const Footer = () => {
                   src={Lichess}
                   alt="Find us on Lichess"
                   className={styles.lichess}
-                  width="30px"
-                  height="30px"
+                  width={30}
+                  height={30}
                 />
               </a>
             </li>
             <li>
               <a href="https://www.chess.com/club/urmston-chess-club">
-                <Image src={Chess} alt="Find us on chess.com" />
+                <Image src={Chess} alt="Find us on chess.com" width={100} />
               </a>
             </li>
           </ul>
