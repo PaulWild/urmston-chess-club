@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <nav className={styles.navigation}>
-        <Link href="/">
+        <Link href="/" className={styles["brand-group"]}>
           <div className={styles["brand-name"]}>
             <Horsey /> <div>Urmston Chess Club</div>
           </div>
