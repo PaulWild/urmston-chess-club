@@ -5,6 +5,9 @@ env:
 on:
   push:
     branches: [main]
+  repository_dispatch:
+    types: [publish-event]
+
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
