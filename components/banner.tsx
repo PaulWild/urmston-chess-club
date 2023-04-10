@@ -15,6 +15,7 @@ const Banner = ({ imgPath, children }: Props) => {
         src={`${imgPath.src}`}
         alt=""
         fill
+        priority
       ></Image>
       {children}
     </div>
