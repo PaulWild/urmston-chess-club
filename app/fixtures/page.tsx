@@ -3,6 +3,8 @@ import React from "react";
 import { HiExternalLink } from "react-icons/hi";
 import { Container } from "../../components/container";
 import styles from "./Fixtures.module.scss";
+import Banner from "../../components/banner";
+import fixtures from "./fixtures.jpg";
 
 export type LeagueGames = Record<string, Fixture[]>;
 
@@ -66,52 +68,59 @@ export default async function Page() {
   }
 
   return (
-    <Container>
-      <div className={styles["league-table"]}>
-        <table>
-          {Object.entries(leagueGames).map(([leagueName, fixtures]) => (
-            <React.Fragment key={leagueName}>
-              <thead key={leagueName}>
-                <tr className={styles["league-name"]}>
-                  <th colSpan={5}>
-                    <Link href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}>
-                      <h2>
-                        <span>{leagueName}</span> <HiExternalLink />
-                      </h2>
-                    </Link>
-                  </th>
-                </tr>
-                <tr>
-                  <th scope="rowgroup">Date</th>
-                  <th scope="rowgroup">Fixture</th>
-                  <th scope="rowgroup">Result</th>
-                </tr>
-              </thead>
-              {fixtures
-                .sort((a, b) => a.date.localeCompare(b.date))
-                .map((fixture) => (
-                  <tbody
-                    key={fixture.sys.id}
-                    className={styles["league-games"]}
-                  >
-                    <tr>
-                      <td>
-                        {new Date(fixture.date).toISOString().substring(0, 10)}
-                      </td>
-                      <td>
-                        {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
-                        {fixture.awayGame ? "Urmston" : fixture.opponent}
-                      </td>
-                      <td className={styles.center}>{`${
-                        fixture.homeScore ?? ""
-                      } - ${fixture.awayScore ?? ""}`}</td>
-                    </tr>
-                  </tbody>
-                ))}
-            </React.Fragment>
-          ))}
-        </table>
-      </div>
-    </Container>
+    <>
+      <Banner imgPath={fixtures} />
+      <Container>
+        <div className={styles["league-table"]}>
+          <table>
+            {Object.entries(leagueGames).map(([leagueName, fixtures]) => (
+              <React.Fragment key={leagueName}>
+                <thead key={leagueName}>
+                  <tr className={styles["league-name"]}>
+                    <th colSpan={3}>
+                      <Link
+                        href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}
+                      >
+                        <h2>
+                          <span>{leagueName}</span> <HiExternalLink />
+                        </h2>
+                      </Link>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th scope="rowgroup">Date</th>
+                    <th scope="rowgroup">Fixture</th>
+                    <th scope="rowgroup">Result</th>
+                  </tr>
+                </thead>
+                {fixtures
+                  .sort((a, b) => a.date.localeCompare(b.date))
+                  .map((fixture) => (
+                    <tbody
+                      key={fixture.sys.id}
+                      className={styles["league-games"]}
+                    >
+                      <tr>
+                        <td>
+                          {new Date(fixture.date)
+                            .toISOString()
+                            .substring(0, 10)}
+                        </td>
+                        <td>
+                          {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
+                          {fixture.awayGame ? "Urmston" : fixture.opponent}
+                        </td>
+                        <td className={styles.center}>{`${
+                          fixture.homeScore ?? ""
+                        } - ${fixture.awayScore ?? ""}`}</td>
+                      </tr>
+                    </tbody>
+                  ))}
+              </React.Fragment>
+            ))}
+          </table>
+        </div>
+      </Container>
+    </>
   );
 }

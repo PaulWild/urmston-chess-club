@@ -1,6 +1,8 @@
 import { Container } from "../../../components/container";
 import Fixture from "./fixture";
 import { type Fixture as FixtureType } from "../page";
+import Banner from "../../../components/banner";
+import fixturesImg from "./../fixtures.jpg";
 
 export type Result = {
   leaguecup: {
@@ -86,10 +88,13 @@ export default async function Page({
   const fixtures: FixtureType[] = res.data.fixtureCollection.items;
 
   return (
-    <Container>
-      {fixtures.map((fixture) => (
-        <Fixture key={fixture.date} fixture={fixture} />
-      ))}
-    </Container>
+    <>
+      <Banner imgPath={fixturesImg} />
+      <Container>
+        {fixtures.map((fixture) => (
+          <Fixture key={fixture.date} fixture={fixture} />
+        ))}
+      </Container>
+    </>
   );
 }
