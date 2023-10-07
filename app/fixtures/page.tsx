@@ -102,9 +102,9 @@ export default async function Page() {
                         {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
                         {fixture.awayGame ? "Urmston" : fixture.opponent}
                       </td>
-                      <td>{`${fixture.homeScore ?? ""} - ${
-                        fixture.awayScore ?? ""
-                      }`}</td>
+                      <td className={styles.center}>{`${
+                        fixture.homeScore ?? ""
+                      } - ${fixture.awayScore ?? ""}`}</td>
                     </tr>
                   </tbody>
                 ))}
