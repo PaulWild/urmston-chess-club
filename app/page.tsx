@@ -1,9 +1,8 @@
-import type { NextPage } from "next";
 import Banner from "../components/banner";
-import chessImage from "../public/images/image2.jpg";
 import { Container } from "../components/container";
+import chessImage from "../public/images/image2.jpg";
 
-const Home: NextPage = () => {
+export default function Page() {
   return (
     <div>
       <Banner imgPath={chessImage} />
@@ -30,6 +29,4 @@ const Home: NextPage = () => {
       </Container>
     </div>
   );
-};
-
-export default Home;
+}

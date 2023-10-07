@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
-import { Container } from "../components/container";
+import { Container } from "../../components/container";
 
-const Links = () => {
+export default function Page() {
   return (
     <Container>
       <h1>Links</h1>
@@ -20,6 +19,4 @@ const Links = () => {
       </ul>
     </Container>
   );
-};
-
-export default Links;
+}

@@ -1,6 +1,6 @@
-import { Container } from "../components/container";
+import { Container } from "../../components/container";
 
-const History = () => {
+export default function Page() {
   return (
     <Container>
       <h1>The History of Urmston Chess Club</h1>
@@ -99,6 +99,4 @@ const History = () => {
       </p>
     </Container>
   );
-};
-
-export default History;
+}

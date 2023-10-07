@@ -1,10 +1,21 @@
-import { Html, Head, Main, NextScript } from "next/document";
-import Apple57 from "../public/favicon/apple-icon-57x57.png";
+import { Metadata } from "next";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import "../styles/globals.scss";
 
-export default function Document() {
+export const metadata: Metadata = {
+  title: "Urmston Chess Club",
+  description: "Urmston chess club",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Html lang="en-GB">
-      <Head>
+    <html lang="en-GB">
+      <head>
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -82,11 +93,12 @@ export default function Document() {
           content="/favicon/ms-icon-144x144.png"
         />
         <meta name="theme-color" content="#ffffff"></meta>
-      </Head>
+      </head>
       <body>
-        <Main />
-        <NextScript />
+        <Header />
+        {children}
+        <Footer />
       </body>
-    </Html>
+    </html>
   );
 }

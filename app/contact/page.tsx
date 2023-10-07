@@ -1,9 +1,9 @@
-import { Container } from "../components/container";
+import Banner from "../../components/banner";
+import { Container } from "../../components/container";
 import styles from "./Contact.module.scss";
-import sportsClub from "../public/images/sportsclub.jpg";
-import Banner from "../components/banner";
+import sportsClub from "../../public/images/sportsclub.jpg";
 
-const Contact = () => {
+export default function Page() {
   return (
     <>
       <Banner imgPath={sportsClub} />
@@ -41,6 +41,4 @@ const Contact = () => {
       </Container>
     </>
   );
-};
-
-export default Contact;
+}

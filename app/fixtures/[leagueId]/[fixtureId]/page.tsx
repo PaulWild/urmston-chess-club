@@ -1,30 +1,30 @@
-import React from "react";
-import { Container } from "../../../components/container";
-import { GetStaticPaths, GetStaticProps } from "next";
-import type { Fixture as FixtureType } from "../.";
-import Fixture from "../../../components/fixture";
+import { Container } from "../../../../components/container";
+import Fixture from "../../../../components/fixture";
+import { type Fixture as FixtureType } from "../../page";
 
-export type League = {
-  name: string;
+export type Result = {
+  sys: {
+    id: string;
+  };
+  leaguecup: {
+    name: string;
+  };
 };
 
-type Params = {
-  leagueId: string;
-};
-
-type Props = {
-  fixtures: FixtureType[];
-};
-
-export const getStaticPaths: GetStaticPaths<Params> = async () => {
+export async function generateStaticParams() {
   const body = JSON.stringify({
     query: `query {
-            leaguesCupsCollection { 
-              items {
-                name
-              }
-              }
-          }`,
+      fixtureCollection (order: date_ASC){
+        items{ 
+          sys {
+            id
+          }
+          leaguecup {
+            name
+          },
+        }
+      }
+    }`,
   });
 
   const res = await fetch(
@@ -39,25 +39,24 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
     }
   ).then((x) => x.json());
 
-  const items: League[] = res.data.leaguesCupsCollection.items;
-  const paths = items
-    .map((x) => x.name.replaceAll(" ", "_"))
-    .flatMap((x) => {
-      return { params: { leagueId: x } };
-    });
+  const items: Result[] = res.data.fixtureCollection.items;
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+  return items.map((x) => ({
+    leagueId: x.leaguecup.name.replaceAll(" ", "_"),
+    fixtureId: x.sys.id,
+  }));
+}
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = (context?.params?.leagueId as string).replaceAll("_", " ");
+export default async function Page({
+  params: { leagueId, fixtureId },
+}: {
+  params: { leagueId: string; fixtureId: string };
+}) {
+  const slug = leagueId.replaceAll("_", " ");
 
   const body = JSON.stringify({
     query: `query {
-        fixtureCollection (order: date_ASC, where: { leaguecup: { name: "${slug}"}}){
+        fixtureCollection (order: date_ASC, where: { leaguecup: { name: "${slug}"},  sys: {id: "${fixtureId}"}}){
           items{ 
             sys {
               id
@@ -90,12 +89,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const fixtures: FixtureType[] = res.data.fixtureCollection.items;
 
-  return {
-    props: { fixtures },
-  };
-};
-
-const Fixtures = ({ fixtures }: Props) => {
   return (
     <Container>
       {fixtures.map((fixture) => (
@@ -103,6 +96,4 @@ const Fixtures = ({ fixtures }: Props) => {
       ))}
     </Container>
   );
-};
-
-export default Fixtures;
+}

@@ -1,8 +1,10 @@
+import Link from "next/link";
 import React from "react";
+import { HiExternalLink } from "react-icons/hi";
 import { Container } from "../../components/container";
 import styles from "./Fixtures.module.scss";
-import { HiExternalLink } from "react-icons/hi";
-import Link from "next/link";
+
+export type LeagueGames = Record<string, Fixture[]>;
 
 export type Fixture = {
   sys: {
@@ -19,13 +21,7 @@ export type Fixture = {
   };
 };
 
-export type LeagueGames = Record<string, Fixture[]>;
-
-type Props = {
-  leagueGames: LeagueGames;
-};
-
-export const getStaticProps = async (): Promise<{ props: Props }> => {
+export default async function Page() {
   const body = JSON.stringify({
     query: `query {
   fixtureCollection {
@@ -69,12 +65,6 @@ export const getStaticProps = async (): Promise<{ props: Props }> => {
     leagueGames[fixture.leaguecup.name] = group;
   }
 
-  return {
-    props: { leagueGames },
-  };
-};
-
-const Fixtures = ({ leagueGames }: Props) => {
   return (
     <Container>
       <div className={styles["league-table"]}>
@@ -136,6 +126,4 @@ const Fixtures = ({ leagueGames }: Props) => {
       </div>
     </Container>
   );
-};
-
-export default Fixtures;
+}
