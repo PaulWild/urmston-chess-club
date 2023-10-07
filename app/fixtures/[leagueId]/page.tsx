@@ -1,11 +1,8 @@
-import { Container } from "../../../../components/container";
-import Fixture from "../../../../components/fixture";
-import { type Fixture as FixtureType } from "../../page";
+import { Container } from "../../../components/container";
+import Fixture from "./fixture";
+import { type Fixture as FixtureType } from "../page";
 
 export type Result = {
-  sys: {
-    id: string;
-  };
   leaguecup: {
     name: string;
   };
@@ -43,20 +40,19 @@ export async function generateStaticParams() {
 
   return items.map((x) => ({
     leagueId: x.leaguecup.name.replaceAll(" ", "_"),
-    fixtureId: x.sys.id,
   }));
 }
 
 export default async function Page({
-  params: { leagueId, fixtureId },
+  params: { leagueId },
 }: {
-  params: { leagueId: string; fixtureId: string };
+  params: { leagueId: string };
 }) {
   const slug = leagueId.replaceAll("_", " ");
 
   const body = JSON.stringify({
     query: `query {
-        fixtureCollection (order: date_ASC, where: { leaguecup: { name: "${slug}"},  sys: {id: "${fixtureId}"}}){
+        fixtureCollection (order: date_ASC, where: { leaguecup: { name: "${slug}"}}){
           items{ 
             sys {
               id

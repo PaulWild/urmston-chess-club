@@ -84,9 +84,7 @@ export default async function Page() {
                 <tr>
                   <th scope="rowgroup">Date</th>
                   <th scope="rowgroup">Fixture</th>
-                  <th scope="rowgroup">Location</th>
                   <th scope="rowgroup">Result</th>
-                  <th></th>
                 </tr>
               </thead>
               {fixtures
@@ -104,19 +102,9 @@ export default async function Page() {
                         {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
                         {fixture.awayGame ? "Urmston" : fixture.opponent}
                       </td>
-                      <td>{fixture.location ?? ""}</td>
                       <td>{`${fixture.homeScore ?? ""} - ${
                         fixture.awayScore ?? ""
                       }`}</td>
-                      <td>
-                        <Link
-                          href={`/fixtures/${leagueName.replaceAll(" ", "_")}/${
-                            fixture.sys.id
-                          }`}
-                        >
-                          <HiExternalLink />
-                        </Link>
-                      </td>
                     </tr>
                   </tbody>
                 ))}
