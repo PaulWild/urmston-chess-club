@@ -4,6 +4,7 @@ import chessImage from "./chess-board.jpg";
 import cup_winners from "./cup_winners.jpeg";
 import clubnight from "./clubnight.jpg";
 import Image from "next/image";
+
 export default function Page() {
   return (
     <div>
