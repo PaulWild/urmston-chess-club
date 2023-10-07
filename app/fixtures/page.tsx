@@ -81,9 +81,9 @@ export default async function Page() {
                       <Link
                         href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}
                       >
-                        <h2>
+                        <h3>
                           <span>{leagueName}</span> <HiExternalLink />
-                        </h2>
+                        </h3>
                       </Link>
                     </th>
                   </tr>

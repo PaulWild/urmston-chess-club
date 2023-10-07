@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Footer from "../components/footer/footer";
 import Header from "../components/header";
-import "../styles/globals.scss";
+import "../styles/global.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
@@ -17,6 +17,16 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@100;300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -95,7 +105,7 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#ffffff"></meta>
       </head>
-      <body>
+      <body className="min-h-screen">
         <Header />
         {children}
         <Footer />

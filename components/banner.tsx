@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image";
-import styles from "./banner.module.scss";
 import Image from "next/image";
 
 type Props = {
@@ -9,9 +8,9 @@ type Props = {
 
 const Banner = ({ imgPath, children }: Props) => {
   return (
-    <div className={styles.banner}>
+    <div className="w-full h-48 md:h-96 object-contain relative">
       <Image
-        className={styles.bannerImage}
+        className="object-cover"
         src={`${imgPath.src}`}
         alt=""
         fill
