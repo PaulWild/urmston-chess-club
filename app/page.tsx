@@ -49,8 +49,8 @@ export default function Page() {
                 <h2>2023 Cup winners</h2>
                 <p>
                   Urmston chess club were victorious in winning the Manchester
-                  league B division cup and the stockport league Presidents'
-                  cup.
+                  league B division cup and the stockport league
+                  President&apos;s cup.
                 </p>
                 <div className="w-full p-4">
                   <figure>
