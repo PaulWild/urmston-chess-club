@@ -1,6 +1,6 @@
 import Banner from "../components/banner";
 import { Container } from "../components/container";
-import chessImage from "../public/images/image2.jpg";
+import chessImage from "./chess-board.jpg";
 
 export default function Page() {
   return (

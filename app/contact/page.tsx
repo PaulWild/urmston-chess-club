@@ -1,7 +1,7 @@
 import Banner from "../../components/banner";
 import { Container } from "../../components/container";
 import styles from "./Contact.module.scss";
-import sportsClub from "../../public/images/sportsclub.jpg";
+import sportsClub from "./sportsclub.jpg";
 
 export default function Page() {
   return (

@@ -1,6 +1,6 @@
-import Facebook from "../public/images/facebook.png";
-import Chess from "../public/images/chess_com.png";
-import Lichess from "../public/images/lichess.png";
+import Facebook from "./facebook.png";
+import Chess from "./chess_com.png";
+import Lichess from "./lichess.png";
 import styles from "./footer.module.scss";
 import Image from "next/image";
 
