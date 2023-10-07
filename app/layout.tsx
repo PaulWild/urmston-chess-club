@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Footer from "../components/footer/footer";
 import Header from "../components/header";
 import "../styles/globals.scss";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Urmston Chess Club",
@@ -98,6 +99,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
