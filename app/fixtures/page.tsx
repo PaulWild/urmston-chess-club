@@ -69,26 +69,23 @@ export default async function Page() {
   return (
     <>
       <Banner imgPath={fixtures} />
+
       <Container>
-        <div className="">
-          <table>
-            {Object.entries(leagueGames).map(([leagueName, fixtures]) => (
-              <React.Fragment key={leagueName}>
+        <h1>Fixtures</h1>
+        <div className="flex flex-wrap gap-x-4 gap-y-10 ">
+          {Object.entries(leagueGames).map(([leagueName, fixtures]) => (
+            <div
+              key={leagueName}
+              className="w-full md:w-auto bg-gray-50 p-4 rounded-xl"
+            >
+              <Link href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}>
+                <h2 className="text-lg font-bold  pt-0 ">{leagueName}</h2>
+              </Link>
+              <table className="w-full">
                 <thead key={leagueName}>
-                  <tr className="text-left">
-                    <th colSpan={3}>
-                      <Link
-                        href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}
-                      >
-                        <h3>
-                          <span>{leagueName}</span> <HiExternalLink />
-                        </h3>
-                      </Link>
-                    </th>
-                  </tr>
                   <tr className="border-b-2">
-                    <th>Date</th>
-                    <th>Fixture</th>
+                    <th className="text-left">Date</th>
+                    <th className="text-left">Fixture</th>
                     <th>Result</th>
                   </tr>
                 </thead>
@@ -112,9 +109,9 @@ export default async function Page() {
                       </tr>
                     </tbody>
                   ))}
-              </React.Fragment>
-            ))}
-          </table>
+              </table>
+            </div>
+          ))}
         </div>
       </Container>
     </>
