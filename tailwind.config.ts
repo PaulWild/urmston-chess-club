@@ -8,6 +8,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
+      logo: ["'Permanent Marker'"],
     },
   },
   plugins: [],
