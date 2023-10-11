@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { HiExternalLink } from "react-icons/hi";
 import { Container } from "../../components/container";
-import styles from "./Fixtures.module.scss";
 import Banner from "../../components/banner";
 import fixtures from "./fixtures.jpg";
 
@@ -71,12 +70,12 @@ export default async function Page() {
     <>
       <Banner imgPath={fixtures} />
       <Container>
-        <div className={styles["league-table"]}>
+        <div className="">
           <table>
             {Object.entries(leagueGames).map(([leagueName, fixtures]) => (
               <React.Fragment key={leagueName}>
                 <thead key={leagueName}>
-                  <tr className={styles["league-name"]}>
+                  <tr className="text-left">
                     <th colSpan={3}>
                       <Link
                         href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}
@@ -87,30 +86,27 @@ export default async function Page() {
                       </Link>
                     </th>
                   </tr>
-                  <tr>
-                    <th scope="rowgroup">Date</th>
-                    <th scope="rowgroup">Fixture</th>
-                    <th scope="rowgroup">Result</th>
+                  <tr className="border-b-2">
+                    <th>Date</th>
+                    <th>Fixture</th>
+                    <th>Result</th>
                   </tr>
                 </thead>
                 {fixtures
                   .sort((a, b) => a.date.localeCompare(b.date))
                   .map((fixture) => (
-                    <tbody
-                      key={fixture.sys.id}
-                      className={styles["league-games"]}
-                    >
+                    <tbody key={fixture.sys.id} className="">
                       <tr>
-                        <td>
+                        <td className="whitespace-nowrap pr-4">
                           {new Date(fixture.date)
                             .toISOString()
                             .substring(0, 10)}
                         </td>
-                        <td>
+                        <td className="max-w-[30rem] min-w-[14rem]">
                           {fixture.awayGame ? fixture.opponent : "Urmston"} v{" "}
                           {fixture.awayGame ? "Urmston" : fixture.opponent}
                         </td>
-                        <td className={styles.center}>{`${
+                        <td className="text-center">{`${
                           fixture.homeScore ?? ""
                         } - ${fixture.awayScore ?? ""}`}</td>
                       </tr>
