@@ -74,10 +74,7 @@ export default async function Page() {
         <h1>Fixtures</h1>
         <div className="flex flex-wrap gap-x-4 gap-y-10 ">
           {Object.entries(leagueGames).map(([leagueName, fixtures]) => (
-            <div
-              key={leagueName}
-              className="w-full md:w-auto bg-gray-50 p-4 rounded-xl"
-            >
+            <div key={leagueName} className="w-full md:w-auto ">
               <Link href={`/fixtures/${leagueName.replaceAll(" ", "_")}`}>
                 <h2 className="text-lg font-bold  pt-0 ">{leagueName}</h2>
               </Link>
